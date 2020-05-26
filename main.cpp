@@ -16,15 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+Integer
+Character
+Boolean
+Floating Point
+Double Floating Point
+Valueless or Void
+
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -56,10 +54,27 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int startDay = 24;
+    int age = 12;
+    int shoes = 0;
+
+    char leftLeg = 'a';
+    char studentGrade = 'e';
+    char starred = '*';
     
+    bool isOpen = true;
+    bool isClosed = false;
+    bool isBroken = false;
     
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    float xAxis = -3.6f;
+    float yAxis = 24.3f;
+    float price = 0.0f;
+
+    double circlDiam = 12.6;
+    double sideA = 126.2;
+    double roadLength = 1364.12;
+
+    ignoreUnused(number, startDay, age, shoes, leftLeg, studentGrade, starred, isOpen, isClosed, isBroken, xAxis, yAxis, price, circlDiam, sideA, roadLength); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -74,43 +89,83 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int ShoeSelection(int shoeSize, int amountBought)
+{
+    ignoreUnused(shoeSize, amountBought);
+    return {};
+}
 /*
  2)
  */
-
+int timeSheet (int startHour, int startMinutes, int endHour, int endMinutes)
+{
+    ignoreUnused(startHour, startMinutes, endHour, endMinutes);
+    return {};    
+}
 /*
  3)
  */
-
+char studentGrades(char Alice = 'a', char Bernard = 'b', char Chris = 'i')
+{
+    ignoreUnused(Alice, Bernard, Chris);
+    return {}; 
+}
 /*
  4)
  */
-
+char fiveLetterWord(char first, char second, char third, char fourth, char fifth)
+{
+    ignoreUnused(first, second, third, fourth, fifth);
+    return {}; 
+}
 /*
  5)
  */
-
+bool doorState(bool isOpen = true, bool isBroken = false)
+{
+    ignoreUnused(isOpen, isBroken);
+    return {}; 
+}    
 /*
  6)
  */
-
+bool employeeStatus (bool punchedIn, bool onBreak, bool punchedOut = false)
+{
+    ignoreUnused(punchedIn, onBreak, punchedOut);
+    return {}; 
+}
 /*
  7)
  */
-
+float pixelPosition( float xAxis = -3.6f, float yAxis = 24.3f)
+{
+    ignoreUnused(xAxis, yAxis);
+    return {}; 
+}
 /*
  8)
  */
-
+float unitPrice(float dollars = 0.00f, float cents  = 0.00f)
+{
+    ignoreUnused(dollars, cents);
+    return {}; 
+}
 /*
  9)
  */
-
+double triangleArea(double legA = 12.6, double legB = 126.2, double hypotenuse = 126.83)
+{
+    ignoreUnused(legA, legB, hypotenuse);
+    return {}; 
+}
 /*
  10)
  */
-
+double circleArea(double pi, double diam)
+{
+    ignoreUnused(pi, diam);
+    return {}; 
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,27 +186,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto selectedShoe = ShoeSelection(12, 2);
     //2)
-    
+    auto punchCard = timeSheet(9, 0, 18, 30);
     //3)
-    
+    auto firstExam = studentGrades('b', 'a', 'c');
     //4)
-    
+    auto setLetters = fiveLetterWord('H', 'e', 'l', 'l', 'o');
     //5)
-    
+    auto setDoorState = doorState(true, false);
     //6)
-    
+    auto setEmployeeStatus = employeeStatus (true, false, false);
     //7)
-    
+    auto setPixelPosition = pixelPosition( -3.6f, 24.3f);
     //8)
-    
+    auto setApplePrice = unitPrice(12.00f, 0.99f);
     //9)
-    
+    auto setTriangleArea = triangleArea(12.6, 126.2, 126.83);
     //10)
+    auto setCircleArea = circleArea(3.14159, 12.0);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, selectedShoe,punchCard, firstExam, setLetters, setDoorState, setEmployeeStatus, setPixelPosition, setApplePrice, setTriangleArea, setCircleArea);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
