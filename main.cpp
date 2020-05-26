@@ -58,9 +58,9 @@ void variableDeclarations()
     int age = 12;
     int shoes = 0;
 
-    char note = 64;
-    char velocity = 127;
-    char channel = 16;
+    char leftLeg = 'a';
+    char studentGrade = 'e';
+    char starred = '*';
     
     bool isOpen = true;
     bool isClosed = false;
@@ -74,7 +74,7 @@ void variableDeclarations()
     double sideA = 126.2;
     double roadLength = 1364.12;
 
-    ignoreUnused(number, startDay, age, shoes, note, velocity, channel, isOpen, isClosed, isBroken, xAxis, yAxis, price, circlDiam, sideA, roadLength); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, startDay, age, shoes, leftLeg, studentGrade, starred, isOpen, isClosed, isBroken, xAxis, yAxis, price, circlDiam, sideA, roadLength); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -105,17 +105,17 @@ int timeSheet (int startHour, int startMinutes, int endHour, int endMinutes)
 /*
  3)
  */
-char playANote (char note, char velocity = 127, char channel = 1)
+char studentGrades(char Alice = 'a', char Bernard = 'b', char Chris = 'i')
 {
-    ignoreUnused(note, velocity, channel);
+    ignoreUnused(Alice, Bernard, Chris);
     return {}; 
 }
 /*
  4)
  */
-char channelAssign (char channel, char dimmer)
+char fiveLetterWord(char first, char second, char third, char fourth, char fifth)
 {
-    ignoreUnused(channel, dimmer);
+    ignoreUnused(first, second, third, fourth, fifth);
     return {}; 
 }
 /*
@@ -188,11 +188,11 @@ int main()
     //1)
     auto selectedShoe = ShoeSelection(12, 2);
     //2)
-    auto punchCard = timeSheet (9, 0, 18, 30);
+    auto punchCard = timeSheet(9, 0, 18, 30);
     //3)
-    auto notePlayed = playANote (36, 64, 16);
+    auto firstExam = studentGrades('b', 'a', 'c');
     //4)
-    auto assignedChannel = channelAssign (112, 3);
+    auto setLetters = fiveLetterWord('H', 'e', 'l', 'l', 'o');
     //5)
     auto setDoorState = doorState(true, false);
     //6)
@@ -206,7 +206,7 @@ int main()
     //10)
     auto setCircleArea = circleArea(3.14159, 12.0);
     
-    ignoreUnused(carRented, selectedShoe,punchCard, notePlayed, assignedChannel, setDoorState, setEmployeeStatus, setPixelPosition, setApplePrice, setTriangleArea, setCircleArea);
+    ignoreUnused(carRented, selectedShoe,punchCard, firstExam, setLetters, setDoorState, setEmployeeStatus, setPixelPosition, setApplePrice, setTriangleArea, setCircleArea);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
